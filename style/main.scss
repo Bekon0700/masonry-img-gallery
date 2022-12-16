@@ -1,0 +1,57 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+
+.masonry-container {
+    width: 90%;
+    margin: 2rem auto;
+    
+    .flexbox {
+        width: 100%;
+        display: flex;
+        flex-flow: column wrap;
+        // have to change the height value of flexbox dynamically to maintain the column count
+        height: 200vw;
+        gap: 2px;
+        justify-content: flex-start;
+        align-content: center;
+
+        .item {
+            width: 33.3%;
+            flex-grow: 1;
+
+            img {
+                width: 100%;
+                height: 100%;
+                border-radius: 6px;
+            }
+        }
+    }
+}
+
+
+@media (max-width: 860px) {
+    .masonry-container {
+        .flexbox {
+            height: 400vw;
+    
+            .item {
+                width: 50%;
+            }
+        }
+    }
+}
+@media (max-width: 420px) {
+    .masonry-container {
+        .flexbox {
+            height: auto;
+    
+            .item {
+                width: 100%;
+            }
+        }
+    }
+}
